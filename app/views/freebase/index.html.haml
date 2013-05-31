@@ -1,0 +1,31 @@
+.row
+  .span6
+    %h1
+      My Amazing Freebase Search
+      
+    = form_tag search_freebase_index_path, :remote => true do
+    
+      %fieldset
+        %legend
+          Search Freebase
+          
+        %fieldset
+          = label_tag :query
+          = text_field_tag :query, "", :placeholder => "Enter a search term"
+          
+        %fieldset
+          = label_tag :filter
+          = text_field_tag :filter, @filter, :placeholder => "Enter a freebase filter",
+          :class => "input-xlarge"
+          %span.help-block
+            Examples 
+            = link_to 'here', 'https://developers.google.com/freebase/v1/search-cookbook', :target => '_blank'           
+    
+        %fieldset
+          %button(type="submit" class="btn")
+            Submit
+            
+        #no-results          
+            
+  .span6
+    %svg(width=400 height=400)

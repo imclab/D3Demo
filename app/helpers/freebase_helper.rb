@@ -1,0 +1,2 @@
+module FreebaseHelper
+end

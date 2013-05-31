@@ -1,0 +1,7 @@
+<% if @results && @results["result"]%>
+$('#no-results').html('');
+  showFreebaseResults(<%= raw @results["result"].map{|r| [r['name'], r['score']] }%>);
+<% else %>
+  showFreebaseResults([]);
+  $('#no-results').html('No results... check the log');
+<% end %>
